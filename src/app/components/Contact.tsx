@@ -144,9 +144,9 @@ function Contact() {
             onSubmit={(e: React.FormEvent<HTMLFormElement>) => handleSubmit(e)}
             className="flex flex-col items-center"
           >
-            <div className="py-2 font-shipmincho font-extrabold text-xl text-main-color">
+            <div className="py-3 font-shipmincho font-extrabold text-xl text-main-color">
               <div className="flex flex-col md:flex-row justify-around items-center mb-16 md:mb-32">
-                <div className="flex flex-col w-24 md:flex-row border-b-2 border-dark-light mx-5 md:mx-10 mb-16 md:mb-0">
+                <div className="flex flex-col w-screen md:flex-row border-b-2 border-dark-light mx-5 md:mx-10 mb-16 md:mb-0">
                   <label htmlFor="name" className="mr-5">
                     Name
                   </label>
@@ -158,7 +158,7 @@ function Contact() {
                     ref={nameRef}
                   />
                 </div>
-                <div className="flex flex-col w-24 md:flex-row border-b-2 border-dark-light mx-5 md:mx-10">
+                <div className="flex flex-col w-screen md:flex-row border-b-2 border-dark-light mx-5 md:mx-10">
                   <label htmlFor="email" className="mr-5">
                     Email
                   </label>
@@ -171,7 +171,7 @@ function Contact() {
                   />
                 </div>
               </div>
-              <div className="flex flex-col w-24 mb-10 border-b-2 border-dark-light mx-5 md:mx-10">
+              <div className="flex flex-col w-screen mb-10 border-b-2 border-dark-light mx-5 md:mx-10">
                 <label htmlFor="comment" className="mr-5">
                   Comment
                 </label>
