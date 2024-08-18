@@ -9,7 +9,8 @@ import Loading from "@/app/loading";
 import { GLTFLoader } from "three/examples/jsm/Addons.js";
 
 function MainVisualMobile(props: any) {
-  const { scene } = useGLTF("/main_Daruma3.gltf");
+  // const { scene } = useGLTF("/main_Daruma3.gltf");
+  const { scene }= useLoader(GLTFLoader, "/main_Daruma3.gltf");
   const [data, setData] = useState<any>(null); // データの型を適切に指定する
 
   const [loading, setLoading] = useState(true);
