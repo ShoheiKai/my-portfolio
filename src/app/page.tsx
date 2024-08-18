@@ -4,9 +4,6 @@ import Card from "./components/Card";
 import { Suspense, useEffect, useRef, useState } from "react";
 import Loading from "./loading";
 import dynamic from "next/dynamic";
-import MainVisual from "./components/MainVisual";
-import MobileMenu from "./components/MobileMenu";
-import MainVisualMobile from "./components/MainVisualMobile";
 import { animateScroll as scroll, Link as LinkScroll } from "react-scroll";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 import ThemeToggle from "./components/ThemeToggle";
@@ -24,6 +21,9 @@ export default function Home() {
   const Profile = dynamic(() => import("./components/Profile"), { ssr: false });
   const Works = dynamic(() => import("./components/Works"), { ssr: false });
   const Contact = dynamic(() => import("./components/Contact"), { ssr: false });
+  const MainVisual = dynamic(() => import("./components/MainVisual"), { ssr: false });
+  const MobileMenu = dynamic(() => import("./components/MobileMenu"), { ssr: false });
+  const MainVisualMobile = dynamic(() => import("./components/MainVisualMobile"), { ssr: false });
 
   const scrollToTop = () => {
     scroll.scrollToTop();

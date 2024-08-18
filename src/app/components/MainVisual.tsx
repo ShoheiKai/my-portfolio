@@ -6,10 +6,13 @@ import { useGLTF, Text3D } from "@react-three/drei";
 import { Suspense } from "react";
 import { Vector3, Euler } from "three";
 import Loading from "@/app/loading";
-import { GLTFLoader } from "three/examples/jsm/Addons.js";
+// import { GLTFLoader } from "three/examples/jsm/Addons.js";
+// import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 function MainVisual(props: any) {
-  const { scene } = useGLTF("/main_Daruma3.gltf");
+  const { scene }= useLoader(GLTFLoader, "/main_Daruma3.gltf");
+  // const { scene } = useGLTF("/main_Daruma3.gltf");
   const [data, setData] = useState<any>(null); // データの型を適切に指定する
   
   const [loading, setLoading] = useState(true);
