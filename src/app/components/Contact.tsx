@@ -146,7 +146,7 @@ function Contact() {
           >
             <div className="font-shipmincho font-extrabold text-xl text-main-color">
               <div className="flex flex-col md:flex-row justify-around items-center mb-16 md:mb-32">
-                <div className=" border-b-2 border-dark-light mx-10 mb-16 md:mb-0">
+                <div className=" border-b-2 border-dark-light md:mx-10 mb-16 md:mb-0">
                   <label htmlFor="name" className="mr-5">
                     Name
                   </label>
@@ -158,7 +158,7 @@ function Contact() {
                     ref={nameRef}
                   />
                 </div>
-                <div className=" border-b-2 border-dark-light mx-10">
+                <div className=" border-b-2 border-dark-light md:mx-10">
                   <label htmlFor="email" className="mr-5">
                     Email
                   </label>
@@ -171,7 +171,7 @@ function Contact() {
                   />
                 </div>
               </div>
-              <div className="mb-10 border-b-2 border-dark-light mx-10">
+              <div className="mb-10 border-b-2 border-dark-light md:mx-10">
                 <label htmlFor="comment" className="mr-5">
                   Comment
                 </label>
