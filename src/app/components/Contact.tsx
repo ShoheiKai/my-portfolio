@@ -146,7 +146,7 @@ function Contact() {
           >
             <div className="font-shipmincho font-extrabold text-xl text-main-color">
               <div className="flex flex-col md:flex-row justify-around items-center mb-16 md:mb-32">
-                <div className="flex flex-col md:flex-row border-b-2 border-dark-light mx-5 md:mx-10 mb-16 md:mb-0">
+                <div className="flex flex-col w-full md:flex-row border-b-2 border-dark-light mx-5 md:mx-10 mb-16 md:mb-0">
                   <label htmlFor="name" className="mr-5">
                     Name
                   </label>
