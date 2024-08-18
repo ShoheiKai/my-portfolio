@@ -146,7 +146,7 @@ function Contact() {
           >
             <div className="font-shipmincho font-extrabold text-xl text-main-color">
               <div className="flex flex-col md:flex-row md:justify-around items-center mb-16 md:mb-32">
-                <div className="flex flex-col md:flex-row border-b-2 border-dark-light mx-5 md:mx-10 mb-16 md:mb-0">
+                <div className="flex flex-col w-5 md:flex-row border-b-2 border-dark-light mx-5 md:mx-10 mb-16 md:mb-0">
                   <label htmlFor="name" className="mr-5">
                     Name
                   </label>
@@ -158,7 +158,7 @@ function Contact() {
                     ref={nameRef}
                   />
                 </div>
-                <div className="flex flex-col md:flex-row border-b-2 border-dark-light mx-5 md:mx-10">
+                <div className="flex flex-col w-5 md:flex-row border-b-2 border-dark-light mx-5 md:mx-10">
                   <label htmlFor="email" className="mr-5">
                     Email
                   </label>
@@ -171,14 +171,14 @@ function Contact() {
                   />
                 </div>
               </div>
-              <div className="mb-10 border-b-2 border-dark-light mx-5 md:mx-10">
+              <div className="mb-10 border-b-2 w-5 border-dark-light mx-5 md:mx-10">
                 <label htmlFor="comment" className="mr-5">
                   Comment
                 </label>
                 <textarea
                   name="comment"
                   id="comment"
-                  className="form-control w-10 max-h-24 min-h-24 bg-slate-50"
+                  className="form-control max-h-24 min-h-24 bg-slate-50"
                   required
                   ref={messageRef}
                 ></textarea>
