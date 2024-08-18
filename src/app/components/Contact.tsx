@@ -152,7 +152,7 @@ function Contact() {
                   </label>
                   <input
                     type="text"
-                    className="form-control w-10 bg-slate-50"
+                    className="form-control bg-slate-50"
                     id="name"
                     required
                     ref={nameRef}
@@ -164,7 +164,7 @@ function Contact() {
                   </label>
                   <input
                     type="email"
-                    className="form-control w-10 bg-slate-50"
+                    className="form-control bg-slate-50"
                     id="email"
                     required
                     ref={emailRef}
@@ -178,7 +178,7 @@ function Contact() {
                 <textarea
                   name="comment"
                   id="comment"
-                  className="form-control max-h-24 w-10 min-h-24 bg-slate-50"
+                  className="form-control max-h-24  min-h-24 bg-slate-50"
                   required
                   ref={messageRef}
                 ></textarea>
