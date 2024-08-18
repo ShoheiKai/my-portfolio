@@ -144,7 +144,7 @@ function Contact() {
             onSubmit={(e: React.FormEvent<HTMLFormElement>) => handleSubmit(e)}
             className="flex flex-col items-center"
           >
-            <div className="px-5 font-shipmincho font-extrabold text-xl text-main-color">
+            <div className="px-4 font-shipmincho font-extrabold text-xl text-main-color">
               <div className="flex flex-col md:flex-row justify-around items-center mb-16 md:mb-32">
                 <div className=" border-b-2 border-dark-light mx-10 mb-16 md:mb-0">
                   <label htmlFor="name" className="mr-5">
