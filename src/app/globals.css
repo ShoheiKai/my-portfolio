@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background-light: #fef8e4;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-dark: #021f4d;
+  }
+}
+
+[data-theme='light'] {
+  background-color: var(--background-light);
+}
+
+[data-theme='dark'] {
+  background-color: var(--background-dark);
+}
+
+
+.rotating-image {
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.custom-cursor-hover:hover {
+  cursor: url("/daurma-drop.cur"), auto;
+}
