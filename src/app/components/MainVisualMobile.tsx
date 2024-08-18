@@ -187,7 +187,10 @@ function MainVisualMobile(props: any) {
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
-        setLoading(false); // データフェッチが完了したらローディングを終了
+        // setLoading(false); // データフェッチが完了したらローディングを終了
+        setTimeout(() => {
+          setLoading(false);
+        }, 2000); 
       }
     };
 

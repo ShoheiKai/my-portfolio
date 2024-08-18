@@ -1,13 +1,9 @@
-// "use client"; // これを追加
-
 import { useEffect, useRef, useState } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { useGLTF, Text3D } from "@react-three/drei";
 import { Suspense } from "react";
 import { Vector3, Euler } from "three";
 import Loading from "@/app/loading";
-// import { GLTFLoader } from "three/examples/jsm/Addons.js";
-// import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 function MainVisual(props: any) {
@@ -189,7 +185,10 @@ function MainVisual(props: any) {
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
-        setLoading(false); // データフェッチが完了したらローディングを終了
+        // setLoading(false); // データフェッチが完了したらローディングを終了
+        setTimeout(() => {
+          setLoading(false);
+        }, 2000); 
       }
     };
 
@@ -202,7 +201,7 @@ function MainVisual(props: any) {
 
   return (
     <Canvas
-      style={{ width: "100%", height: "720px" }}
+      style={{ width: "95%", height: "700px" }}
       onMouseEnter={() => setIsMouseInCanvas(true)}
       onMouseLeave={() => setIsMouseInCanvas(false)}
       onClick={handleClick} // クリックイベントを追加
