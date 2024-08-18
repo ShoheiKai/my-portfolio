@@ -1,7 +1,10 @@
+'use client'
 import React from "react";
 import swagData from "../data";
-import Card from "../works/components/Card/Card";
+import dynamic from "next/dynamic";
+// import Card from "../works/components/Card/Card";
 import { delay, motion, useAnimationControls } from "framer-motion";
+import WorksCard from "./WorksCard";
 
 function Works() {
   const data = swagData;
@@ -104,14 +107,14 @@ function Works() {
         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 auto-rows-max	 gap-6 m-10 "
       >
         {data.map(({ id, title, imageSrc, description, href }) => (
-          <Card
+          <WorksCard
             key={id}
             id={id}
             title={title}
             imageSrc={imageSrc}
             description={description}
             href={href}
-          ></Card>
+          ></WorksCard>
         ))}
       </motion.div>
     </>

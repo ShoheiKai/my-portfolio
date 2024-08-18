@@ -1,7 +1,8 @@
+'use client'
 import Link from "next/link";
 import Image from "next/image";
 
-export default function Card({
+export default function WorksCard({
   id,
   title,
   imageSrc,

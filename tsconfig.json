@@ -21,6 +21,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/components/ThemeProvider.tsxxx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/components/ThemeProvider.tsxxx", "src/app/components/WorkCardDetail.tsxxxx"],
   "exclude": ["node_modules"]
 }
