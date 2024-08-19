@@ -64,7 +64,7 @@ function AboutThisSite() {
         About this site
       </motion.h1>
       <div className="flex flex-col md:flex-row md:mt-4">
-        <div className="font-notojp text-sm leading-loose tracking-wider text-center mb-10 md md:text-lg md:leading-loose">
+        <div className="font-notojp text-sm leading-loose tracking-wider text-center md:mb-10 md:text-lg md:leading-loose">
           <motion.p
             viewport={{ once: true }}
             custom={0}
@@ -72,7 +72,7 @@ function AboutThisSite() {
             whileInView="pVisible"
             // animate={controls}
             variants={textAnimation}
-            className="hidden md:block" //animate-fade-up animate-duration-[1000ms] animate-once animate-ease-in-out animate-fade-down animate-duration-[1000ms] animate-once animate-ease-in-out
+            className="hidden md:block" 
           >
             ここは、甲斐翔平のポートフォリオサイトです。
           </motion.p>
@@ -180,7 +180,7 @@ function AboutThisSite() {
             ゆっくり見ていってください。
           </motion.p>
         </div>
-        <div className="relative w-60 h-80 md:absolute md:right-48">
+        <div className="absolute top-[1000px] right-[40px] w-60 h-80 md:absolute md:top-[1200px] md:right-56 scale-75 md:scale-100">
           <div className="absolute w-16 h-16 top-10 right-5 ">
             <Image
               src="/img/pot.png"

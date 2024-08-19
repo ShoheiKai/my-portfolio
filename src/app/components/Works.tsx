@@ -65,7 +65,7 @@ function Works() {
       >
         Works
       </motion.h1>
-      <div className="leading-loose text-sm md:leading-loose md:text-lg">
+      <div className="leading-relaxed text-sm md:leading-loose md:text-lg">
         <motion.p
           viewport={{ once: true }}
           custom={0}

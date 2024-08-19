@@ -72,6 +72,19 @@ function Profile() {
         ease: "easeOut",
       },
     }),
+    borderInit: {
+      opacity: 1,
+      clipPath: "inset(0 100% 0 0)", // 右側全体をクリップ（非表示）
+    },
+    borderVisible: {
+      opacity: 1,
+      clipPath: "inset(0 0% 0 0)", // クリップを解除してボーダー全体を表示
+      transition: {
+        duration: 1.8,
+        delay: 0.5,
+        ease: "easeOut",
+      },
+    },
   };
 
   return (
@@ -97,7 +110,7 @@ function Profile() {
         </motion.p>
 
         {/* モバイル対応 */}
-        <div className="leading-loose text-sm dark:text-dark-color">
+        <div className="leading-relaxed text-sm dark:text-dark-color">
           <motion.p
             viewport={{ once: true }}
             initial="pInit"
@@ -160,7 +173,13 @@ function Profile() {
                 />
               </motion.div>
             </div>
-            <div className="flex justify-end border-b-2">
+            <motion.div
+              viewport={{ once: true }}
+              initial="borderInit"
+              whileInView="borderVisible"
+              variants={textAnimation}
+              className="flex justify-end border-b-2 border-dark-light"
+            >
               <div className="md:w-3/4">
                 <motion.div
                   viewport={{ once: true }}
@@ -178,7 +197,7 @@ function Profile() {
                   </p>
                 </motion.div>
               </div>
-            </div>
+            </motion.div>
           </div>
           <div id="2" className="mb-10 dark:text-dark-color">
             <div className="flex flex-col md:flex-row font-shipmincho font-extrabold mb-4">
@@ -249,7 +268,13 @@ function Profile() {
                 </motion.div>
               </div>
             </div>
-            <div className="flex justify-end border-b-2">
+            <motion.div
+              viewport={{ once: true }}
+              initial="borderInit"
+              whileInView="borderVisible"
+              variants={textAnimation}
+              className="flex justify-end border-b-2 border-dark-light"
+            >
               <div className="md:w-3/4">
                 <motion.div
                   viewport={{ once: true }}
@@ -283,7 +308,7 @@ function Profile() {
                   </p>
                 </motion.div>
               </div>
-            </div>
+            </motion.div>
           </div>
           <div id="3" className="mb-10 dark:text-dark-color">
             <div className="flex flex-col md:flex-row font-shipmincho font-extrabold mb-4">
@@ -354,7 +379,13 @@ function Profile() {
                 </motion.div>
               </div>
             </div>
-            <div className="flex justify-end border-b-2">
+            <motion.div
+              viewport={{ once: true }}
+              initial="borderInit"
+              whileInView="borderVisible"
+              variants={textAnimation}
+              className="flex justify-end border-b-2 border-dark-light"
+            >
               <div className="md:w-3/4">
                 <motion.div
                   viewport={{ once: true }}
@@ -388,7 +419,7 @@ function Profile() {
                   </p>
                 </motion.div>
               </div>
-            </div>
+            </motion.div>
           </div>
           <div id="4" className="mb-10 dark:text-dark-color">
             <div className="flex flex-col md:flex-row font-shipmincho font-extrabold mb-4">
@@ -460,7 +491,13 @@ function Profile() {
                 </motion.div>
               </div>
             </div>
-            <div className="flex justify-end border-b-2">
+            <motion.div
+              viewport={{ once: true }}
+              initial="borderInit"
+              whileInView="borderVisible"
+              variants={textAnimation}
+              className="flex justify-end border-b-2 border-dark-light"
+            >
               <div className="md:w-3/4">
                 <motion.div
                   viewport={{ once: true }}
@@ -495,7 +532,7 @@ function Profile() {
                   </p>
                 </motion.div>
               </div>
-            </div>
+            </motion.div>
           </div>
           <div id="5" className="md:mb-10 dark:text-dark-color">
             <div className="flex flex-col md:flex-row font-shipmincho font-extrabold mb-4">
@@ -566,7 +603,7 @@ function Profile() {
                 </motion.div>
               </div>
             </div>
-            <div className="flex justify-end dark:text-dark-colo">
+            <div className="flex justify-end dark:text-dark-color">
               <div className="md:w-3/4">
                 <motion.div
                   viewport={{ once: true }}

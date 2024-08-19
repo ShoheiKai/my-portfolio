@@ -7,11 +7,9 @@ import dynamic from "next/dynamic";
 import { animateScroll as scroll, Link as LinkScroll } from "react-scroll";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 import ThemeToggle from "./components/ThemeToggle";
+import Image from "next/image";
 
 export default function Home() {
-  // // useStateフックを使って画像のパスを管理
-  // const { toggleColorMode, selectedMode } = useColorModeContext();
-
   // 各コンポーネントの読み込み
   const AboutThisSite = dynamic(() => import("./components/AboutThisSite"), {
     ssr: false,
@@ -21,9 +19,16 @@ export default function Home() {
   const Profile = dynamic(() => import("./components/Profile"), { ssr: false });
   const Works = dynamic(() => import("./components/Works"), { ssr: false });
   const Contact = dynamic(() => import("./components/Contact"), { ssr: false });
-  const MainVisual = dynamic(() => import("./components/MainVisual"), { ssr: false });
-  const MobileMenu = dynamic(() => import("./components/MobileMenu"), { ssr: false });
-  const MainVisualMobile = dynamic(() => import("./components/MainVisualMobile"), { ssr: false });
+  const MainVisual = dynamic(() => import("./components/MainVisual"), {
+    ssr: false,
+  });
+  const MobileMenu = dynamic(() => import("./components/MobileMenu"), {
+    ssr: false,
+  });
+  const MainVisualMobile = dynamic(
+    () => import("./components/MainVisualMobile"),
+    { ssr: false }
+  );
 
   const scrollToTop = () => {
     scroll.scrollToTop();
@@ -91,21 +96,17 @@ export default function Home() {
           </nav>
           {/* モバイル版ハンバーガーメニュー */}
           <div className="block md:hidden">
-          <div className="">
-            <MobileMenu />
+            <div className="">
+              <MobileMenu />
+            </div>
           </div>
-          </div>
-
         </div>
       </header>
 
       {/* メインコンテンツ */}
       <main className="container mx-auto text-main-color ">
         <div className="hidden md:block">
-          <ScrollToTopButton
-            showAfter={200}
-            hideBefore={6600}
-          />
+          <ScrollToTopButton showAfter={200} hideBefore={6600} />
         </div>
         {/* メインビジュアル */}
         <Suspense fallback={<Loading />}>
@@ -121,11 +122,45 @@ export default function Home() {
 
         {/* About this site */}
         <section id="About" className="">
-          {/* <div>
-          <ScrollListener
-          ></ScrollListener>
-          </div> */}
-          <div className="bg-slate-200 flex flex-col justify-center md:justify-normal items-center md:min-h-svh md:shadow-slate-500 md:shadow-md dark:shadow-orange-200">
+          <div className="relative">
+            <div className="absolute top-2 left-2 hidden md:block">
+              <Image
+                src="/img/dark.png"
+                alt="だるまPIN"
+                width={30}
+                height={30}
+                className="opacity-65"
+              />
+            </div>
+            <div className="absolute top-2 right-2 hidden md:block">
+              <Image
+                src="/img/dark.png"
+                alt="だるまPIN"
+                width={30}
+                height={30}
+                className="opacity-65"
+              />
+            </div>
+            <div className="absolute top-[750px] left-2 hidden md:block">
+              <Image
+                src="/img/dark.png"
+                alt="だるまPIN"
+                width={30}
+                height={30}
+                className="opacity-65"
+              />
+            </div>
+            <div className="absolute top-[750px] right-2 hidden md:block">
+              <Image
+                src="/img/dark.png"
+                alt="だるまPIN"
+                width={30}
+                height={30}
+                className="opacity-65"
+              />
+            </div>
+          </div>
+          <div className="bg-slate-200 dark:bg-slate-50 flex flex-col md:justify-normal items-center min-h-svh md:shadow-slate-500 md:shadow-md dark:shadow-orange-200">
             <AboutThisSite />
           </div>
         </section>
@@ -133,13 +168,52 @@ export default function Home() {
         {/* About Me */}
         <section id="AboutMe" className="">
           <div className="flex flex-col justify-center md:justify-normal items-center mb-5 md:mb-0 mt-10 md:mt-5 min-h-svh">
+            <div></div>
             <AboutMe />
           </div>
         </section>
 
         {/* My Skill */}
         <section id="MySkill" className="">
-          <div className="bg-slate-200 flex flex-col justify-center items-center min-h-svh md:shadow-slate-500 md:shadow-md">
+          <div className="relative">
+            <div className="absolute top-2 left-2 hidden md:block">
+              <Image
+                src="/img/dark.png"
+                alt="だるまPIN"
+                width={30}
+                height={30}
+                className="opacity-65"
+              />
+            </div>
+            <div className="absolute top-2 right-2 hidden md:block">
+              <Image
+                src="/img/dark.png"
+                alt="だるまPIN"
+                width={30}
+                height={30}
+                className="opacity-65"
+              />
+            </div>
+            <div className="absolute top-[750px] left-2 hidden md:block">
+              <Image
+                src="/img/dark.png"
+                alt="だるまPIN"
+                width={30}
+                height={30}
+                className="opacity-65"
+              />
+            </div>
+            <div className="absolute top-[750px] right-2 hidden md:block">
+              <Image
+                src="/img/dark.png"
+                alt="だるまPIN"
+                width={30}
+                height={30}
+                className="opacity-65"
+              />
+            </div>
+          </div>
+          <div className="bg-slate-200 dark:bg-slate-50 flex flex-col justify-center md:justify-normal items-center min-h-svh md:shadow-slate-500 md:shadow-md dark:shadow-orange-200">
             <MySkill />
           </div>
         </section>
@@ -153,7 +227,45 @@ export default function Home() {
 
         {/* Works */}
         <section id="Works" className="">
-          <div className="bg-slate-200 flex flex-col justify-center items-center min-h-svh md:shadow-slate-500 md:shadow-md">
+          <div className="relative">
+            <div className="absolute top-2 left-2 hidden md:block">
+              <Image
+                src="/img/dark.png"
+                alt="だるまPIN"
+                width={30}
+                height={30}
+                className="opacity-65"
+              />
+            </div>
+            <div className="absolute top-2 right-2 hidden md:block">
+              <Image
+                src="/img/dark.png"
+                alt="だるまPIN"
+                width={30}
+                height={30}
+                className="opacity-65"
+              />
+            </div>
+            <div className="absolute top-[750px] left-2 hidden md:block">
+              <Image
+                src="/img/dark.png"
+                alt="だるまPIN"
+                width={30}
+                height={30}
+                className="opacity-65"
+              />
+            </div>
+            <div className="absolute top-[750px] right-2 hidden md:block">
+              <Image
+                src="/img/dark.png"
+                alt="だるまPIN"
+                width={30}
+                height={30}
+                className="opacity-65"
+              />
+            </div>
+          </div>
+          <div className="bg-slate-200 dark:bg-slate-50 flex flex-col justify-center items-center min-h-svh md:shadow-slate-500 md:shadow-md dark:shadow-orange-200">
             <Works />
           </div>
         </section>

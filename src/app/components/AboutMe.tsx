@@ -20,7 +20,7 @@ function AboutMe() {
     },
     pInit: {
       opacity: 0,
-      x: 30,
+      x: 15,
     },
     pVisible: (index: number) => ({
       opacity: 1,

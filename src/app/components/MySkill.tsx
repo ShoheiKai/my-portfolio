@@ -19,7 +19,7 @@ function MySkill() {
     },
     pInit: {
       opacity: 0,
-      x: 30,
+      x: 15,
     },
     pVisible: (index: number) => ({
       opacity: 1,
@@ -32,7 +32,7 @@ function MySkill() {
     }),
     p2Init: {
       opacity: 0,
-      y: 30,
+      y: 15,
     },
     p2Visible: {
       opacity: 1,
@@ -63,13 +63,13 @@ function MySkill() {
 
   return (
     <>
-      <div className="mt-12 mb-10 container mx-auto ">
+      <div className="mt-12 mb-8 container mx-auto ">
         <motion.h1
           viewport={{ once: true }}
           initial="hInit"
           whileInView="hVisible"
           variants={textAnimation}
-          className="font-shipmincho font-extrabold text-5xl text-center"
+          className="font-shipmincho font-extrabold md:mb-20 text3xl md:text-4xl text-center"
         >
           My skill set
         </motion.h1>
@@ -125,7 +125,7 @@ function MySkill() {
               whileInView="p2Visible"
               // animate={controls}
               variants={textAnimation}
-              className="font-notojp text-lg hidden md:block"
+              className="font-notojp text-sm hidden md:block"
             >
               チャートの見方
               <br />
@@ -140,7 +140,7 @@ function MySkill() {
               whileInView="p2Visible"
               // animate={controls}
               variants={textAnimation}
-              className="font-notojp text-base block md:hidden px-2"
+              className="font-notojp text-xs block md:hidden px-2"
             >
               チャートの見方
               <br />
@@ -153,7 +153,7 @@ function MySkill() {
               「4:スキルについてたくさん教えられます」
             </motion.p>
           </div>
-          <div className="font-notojp text-base px-5 font-semibold leading-loose md:text-2xl md:leading-relaxed">
+          <div className="font-notojp text-base px-5 leading-relaxed md:text-lg md:leading-relaxed">
             <motion.p
               viewport={{ once: true }}
               custom={0}
