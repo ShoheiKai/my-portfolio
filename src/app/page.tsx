@@ -43,13 +43,6 @@ export default function Home() {
           </div>
           {/* PC版ナビゲーション */}
           <nav className="md:ml-auto hover:cursor-pointer hidden md:block">
-            {/* <a
-              href="#Header"
-              className="mr-10 transform hover:text-2xl duration-200 hover:border-b-4 hover:border-dark-light"
-              style={{ lineHeight: "normal" }}
-            >
-              Top
-            </a> */}
             <LinkScroll
               to="About"
               smooth={true}
@@ -98,13 +91,16 @@ export default function Home() {
           </nav>
           {/* モバイル版ハンバーガーメニュー */}
           <div className="block md:hidden">
+          <div className="">
             <MobileMenu />
           </div>
+          </div>
+
         </div>
       </header>
 
       {/* メインコンテンツ */}
-      <main className="container mx-auto  text-main-color ">
+      <main className="container mx-auto text-main-color ">
         <div className="hidden md:block">
           <ScrollToTopButton
             showAfter={200}
@@ -129,21 +125,21 @@ export default function Home() {
           <ScrollListener
           ></ScrollListener>
           </div> */}
-          <div className="bg-slate-200 flex flex-col justify-center items-center min-h-svh">
+          <div className="bg-slate-200 flex flex-col justify-center md:justify-normal items-center md:min-h-svh md:shadow-slate-500 md:shadow-md dark:shadow-orange-200">
             <AboutThisSite />
           </div>
         </section>
 
         {/* About Me */}
         <section id="AboutMe" className="">
-          <div className="flex flex-col justify-center items-center mt-10 md:mt-5 min-h-svh">
+          <div className="flex flex-col justify-center md:justify-normal items-center mb-5 md:mb-0 mt-10 md:mt-5 min-h-svh">
             <AboutMe />
           </div>
         </section>
 
         {/* My Skill */}
         <section id="MySkill" className="">
-          <div className="bg-slate-200 flex flex-col justify-center items-center min-h-svh">
+          <div className="bg-slate-200 flex flex-col justify-center items-center min-h-svh md:shadow-slate-500 md:shadow-md">
             <MySkill />
           </div>
         </section>
@@ -157,14 +153,14 @@ export default function Home() {
 
         {/* Works */}
         <section id="Works" className="">
-          <div className="bg-slate-200 flex flex-col justify-center items-center min-h-svh">
+          <div className="bg-slate-200 flex flex-col justify-center items-center min-h-svh md:shadow-slate-500 md:shadow-md">
             <Works />
           </div>
         </section>
 
         {/* Contact */}
         <section id="Contact" className="">
-          <div className="bg-slate-50 flex flex-col justify-center items-center min-h-svh">
+          <div className=" flex flex-col justify-center items-center min-h-svh">
             <Contact />
           </div>
         </section>
@@ -172,19 +168,19 @@ export default function Home() {
 
       {/* フッター */}
       <footer className="font-shipmincho font-extrabold text-xl text-main-color ">
-        <div className="container mx-auto min-h-96 max-h-96 flex flex-col items-center ">
-          <div className="bg-yellow-100 min-h-80 w-full flex flex-col justify-center items-center">
-            <div className="relative bg-yellow-100 rounded-full w-24 h-24 translate-y-[-120px] flex items-center justify-center transform duration-500 hover:duration-500 hover:scale-125">
+        <div className="container mx-auto min-h-44 max-h-44 md:min-h-96 md:max-h-96 flex flex-col items-center ">
+          <div className="bg-yellow-100 min-h-32 md:min-h-80 w-full flex flex-col justify-center items-center">
+            <div className="relative bg-yellow-100 rounded-full w-12 h-12 md:w-24 md:h-24 translate-y-[-40px] md:translate-y-[-120px] flex items-center justify-center transform duration-500 hover:duration-500 hover:scale-125">
               <button
                 onClick={scrollToTop}
-                className="relative translate-y-[-45px] after:border-x-[30px] after:border-b-[40px] after:border-transparent after:border-b-dark-light "
+                className="relative translate-y-[-30px] md:translate-y-[-45px] after:border-x-[15px] md:after:border-x-[30px] after:border-b-[20px] md:after:border-b-[40px] after:border-transparent after:border-b-dark-light "
               ></button>
             </div>
-            <div className="relative translate-y-[-50px]">
-              <h2 className="text-3xl md:text-5xl">Thank you for coming</h2>
+            <div className="relative translate-y-[-25px] md:translate-y-[-50px]">
+              <h2 className="text-2xl md:text-4xl">Thank you for coming</h2>
             </div>
           </div>
-          <div className="bg-custom-dark-light min-h-16 w-full flex flex-col justify-center items-center">
+          <div className="bg-custom-dark-light text-sm p-3 min-h-12 md:min-h-16 w-full flex flex-col justify-center items-center">
             <div>&copy;2024 Kai Shohei</div>
           </div>
         </div>

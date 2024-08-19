@@ -201,7 +201,7 @@ function MainVisual(props: any) {
 
   return (
     <Canvas
-      style={{ width: "95%", height: "700px" }}
+      style={{ width: "95%", height: "750px" }}
       onMouseEnter={() => setIsMouseInCanvas(true)}
       onMouseLeave={() => setIsMouseInCanvas(false)}
       onClick={handleClick} // クリックイベントを追加

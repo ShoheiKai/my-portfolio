@@ -79,13 +79,13 @@ function Contact() {
 
   return (
     <>
-      <div className="mb-10 py-10 ">
+      <div className="mb-10 py-12 ">
         <motion.h1
           viewport={{ once: true }}
           initial="hInit"
           whileInView="hVisible"
           variants={textAnimation}
-          className="mb-8 md:mb-10 font-shipmincho font-extrabold text-5xl text-center"
+          className="mb-4 md:mb-10 font-shipmincho font-extrabold dark:text-dark-color text-3xl md:text-4xl text-center"
         >
           Contact
         </motion.h1>
@@ -95,7 +95,7 @@ function Contact() {
           initial="pInit"
           whileInView="pVisible"
           variants={textAnimation}
-          className="font-notojp text-2xl leading-relaxed text-center  hidden md:block"
+          className="font-notojp text-lg leading-relaxed text-center dark:text-dark-color hidden md:block"
         >
           最後まで読んでいただき、ありがとうございました。
           <br />
@@ -113,7 +113,7 @@ function Contact() {
           initial="pInit"
           whileInView="pVisible"
           variants={textAnimation}
-          className="px-3 font-notojp text-lg leading-relaxed text-center block md:hidden "
+          className="px-3 font-notojp text-sm leading-relaxed text-center tracking-wider md:tracking-widest dark:text-dark-color block md:hidden "
         >
           最後まで読んでいただき、
           <br />
@@ -144,41 +144,41 @@ function Contact() {
             onSubmit={(e: React.FormEvent<HTMLFormElement>) => handleSubmit(e)}
             className="flex flex-col items-center"
           >
-            <div className="px-3 font-shipmincho font-extrabold text-xl text-main-color">
+            <div className="px-3 font-shipmincho font-extrabold tracking-wider text-xl text-main-color dark:text-dark-color">
               <div className="flex flex-col md:flex-row md:justify-around items-center mb-16 md:mb-32">
-                <div className=" border-b-2 border-dark-light mx-10 mb-16 md:mb-0">
+                <div className="mx-10 mb-16 md:mb-0">
                   <label htmlFor="name" className="mr-5">
                     Name
                   </label>
                   <input
                     type="text"
-                    className="form-control w-full bg-slate-50"
+                    className="form-control w-full border-2 rounded-md border-stone-100 bg-white"
                     id="name"
                     required
                     ref={nameRef}
                   />
                 </div>
-                <div className=" border-b-2 border-dark-light mx-10">
+                <div className="mx-10">
                   <label htmlFor="email" className="mr-5">
                     Email
                   </label>
                   <input
                     type="email"
-                    className="form-control w-full bg-slate-50"
+                    className="form-control w-full border-2 rounded-md border-stone-100 bg-white"
                     id="email"
                     required
                     ref={emailRef}
                   />
                 </div>
               </div>
-              <div className="mb-10 border-b-2 border-dark-light mx-10">
+              <div className="mb-10 mx-10">
                 <label htmlFor="comment" className="mr-5">
                   Comment
                 </label>
                 <textarea
                   name="comment"
                   id="comment"
-                  className="form-control w-full max-h-24 min-h-24 bg-slate-50"
+                  className="form-control w-full max-h-28 min-h-28 border-2 rounded-md border-stone-100 bg-white"
                   required
                   ref={messageRef}
                 ></textarea>

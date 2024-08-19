@@ -61,11 +61,11 @@ function Works() {
         initial="hInit"
         whileInView="hVisible"
         variants={textAnimation}
-        className="mb-10 font-shipmincho font-extrabold text-5xl text-center"
+        className="mb-8 md:mb-10 font-shipmincho font-extrabold text-3xl md:text-4xl text-center"
       >
         Works
       </motion.h1>
-      <div className="leading-loose text-xl md:leading-loose md:text-2xl">
+      <div className="leading-loose text-sm md:leading-loose md:text-lg">
         <motion.p
           viewport={{ once: true }}
           custom={0}
@@ -86,7 +86,7 @@ function Works() {
           variants={textAnimation}
           className="font-notojp text-center block md:hidden "
         >
-          では最後に、ワクワクの思いを
+          では最後に、ワクワクの思いを詰め込んだ
         </motion.p>
         <motion.p
           viewport={{ once: true }}
@@ -96,7 +96,7 @@ function Works() {
           variants={textAnimation}
           className="font-notojp text-center block md:hidden "
         >
-          詰め込んだ私の成果物たちです。
+          私の成果物たちです。
         </motion.p>
       </div>
       <motion.div

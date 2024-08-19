@@ -203,7 +203,7 @@ function MainVisualMobile(props: any) {
 
   return (
     <Canvas
-      style={{ width: "95%", height: "500px" }}
+      style={{ width: "95%", height: "600px" }}
       onMouseEnter={() => setIsMouseInCanvas(true)}
       onMouseLeave={() => setIsMouseInCanvas(false)}
       onClick={handleClick} // クリックイベントを追加

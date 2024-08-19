@@ -50,7 +50,7 @@ function MobileMenu() {
             // whileInView="openVisible"
             // variants={textAnimation}
             onClick={onClickOpen}
-            className="relative flex flex-col justify-center items-center w-14 cursor-pointer"
+            className="relative right-0 flex flex-col justify-center items-center w-14 cursor-pointer"
           >
             <motion.div
               initial="openInit"
@@ -88,7 +88,7 @@ function MobileMenu() {
 
       {/* ナビゲーションメニュー */}
       {open && (
-        <div className="dark:text-dark-color text-main-color cursor-pointer">
+        <div className=" text-base dark:text-dark-color text-main-color cursor-pointer">
           <motion.nav
             // viewport={{ once: true }}
             initial="navInit"
@@ -101,7 +101,7 @@ function MobileMenu() {
               smooth={true}
               duration={600}
               offset={0}
-              className=" transform hover:text-2xl duration-200 hover:border-b-4 hover:border-dark-light"
+              className=" transform hover:text-xl duration-200 hover:border-b-4 hover:border-dark-light"
             >
               About this site
             </LinkScroll>
@@ -110,7 +110,7 @@ function MobileMenu() {
               smooth={true}
               duration={1000}
               offset={0}
-              className=" transform hover:text-2xl duration-200 hover:border-b-4 hover:border-dark-light"
+              className=" transform hover:text-xl duration-200 hover:border-b-4 hover:border-dark-light"
             >
               About me
             </LinkScroll>
@@ -119,7 +119,7 @@ function MobileMenu() {
               smooth={true}
               duration={1000}
               offset={0}
-              className="transform hover:text-2xl duration-200 hover:border-b-4 hover:border-dark-light"
+              className="transform hover:text-xl duration-200 hover:border-b-4 hover:border-dark-light"
             >
               My skill
             </LinkScroll>
@@ -128,7 +128,7 @@ function MobileMenu() {
               smooth={true}
               duration={1000}
               offset={0}
-              className="transform hover:text-2xl duration-200 hover:border-b-4 hover:border-dark-light"
+              className="transform hover:text-xl duration-200 hover:border-b-4 hover:border-dark-light"
             >
               Portfolio
             </LinkScroll>
@@ -137,7 +137,7 @@ function MobileMenu() {
               smooth={true}
               duration={1000}
               offset={0}
-              className="transform hover:text-2xl duration-200 hover:border-b-4 hover:border-dark-light"
+              className="transform hover:text-xl duration-200 hover:border-b-4 hover:border-dark-light"
             >
               Contact
             </LinkScroll>

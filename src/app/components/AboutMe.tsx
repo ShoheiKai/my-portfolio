@@ -58,7 +58,7 @@ function AboutMe() {
         initial="hInit"
         whileInView="hVisible"
         variants={textAnimation}
-        className=" font-shipmincho font-extrabold md:mb-5 md:py-12 text-5xl text-center dark:text-dark-color"
+        className=" font-shipmincho font-extrabold md:mt-5 md:mb-20 md:py-12 text-3xl md:text-4xl text-center dark:text-dark-color"
       >
         About me
       </motion.h1>
@@ -70,7 +70,7 @@ function AboutMe() {
           // animate={controls}
           variants={textAnimation}
           whileTap={{ scale: 1.2, rotateX: 10 }}
-          className="my-16 md:my-0" //animate-jump-in animate-once animate-duration-[800ms]
+          className="my-12 md:my-0" //animate-jump-in animate-once animate-duration-[800ms]
         >
           <Image
             src="/img/daruma-icon.png"
@@ -82,7 +82,7 @@ function AboutMe() {
             className="bg-custom-dark-light rounded-xl cursor-pointer"
           />
         </motion.div>
-        <div className="py-4 px-5 font-notojp text-lg leading-loose md:px-0 md:p-0 md:ml-32 md:text-2xl md:leading-loose ">
+        <div className="py-4 pl-6 pr-4 font-notojp text-sm leading-loose md:tracking-widest md:px-0 md:p-0 md:ml-32 md:text-base md:leading-loose ">
           {/* PCの時に表示する文字量 */}
           <motion.p
             viewport={{ once: true }}
