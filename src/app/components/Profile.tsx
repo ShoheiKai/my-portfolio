@@ -293,7 +293,7 @@ function Profile() {
                 </motion.div>
                 <motion.div
                   viewport={{ once: true }}
-                  custom={1.2}
+                  custom={1}
                   initial="item2Init"
                   whileInView="item2Visible"
                   variants={textAnimation}
@@ -404,7 +404,7 @@ function Profile() {
                 </motion.div>
                 <motion.div
                   viewport={{ once: true }}
-                  custom={1.2}
+                  custom={1}
                   initial="item2Init"
                   whileInView="item2Visible"
                   variants={textAnimation}
@@ -517,7 +517,7 @@ function Profile() {
                 </motion.div>
                 <motion.div
                   viewport={{ once: true }}
-                  custom={1.2}
+                  custom={1}
                   initial="item2Init"
                   whileInView="item2Visible"
                   variants={textAnimation}

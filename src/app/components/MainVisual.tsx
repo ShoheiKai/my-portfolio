@@ -1,14 +1,16 @@
+"use client"
+
 import { useEffect, useRef, useState } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { useGLTF, Text3D } from "@react-three/drei";
 import { Suspense } from "react";
 import { Vector3, Euler } from "three";
-import Loading from "@/app/loading";
+// import Loading from "@/app/Loading";
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import dynamic from "next/dynamic";
 
 function MainVisual(props: any) {
   const { scene }= useLoader(GLTFLoader, "/main_Daruma3.gltf");
-  // const { scene } = useGLTF("/main_Daruma3.gltf");
   const [data, setData] = useState<any>(null); // データの型を適切に指定する
   
   const [loading, setLoading] = useState(true);
@@ -174,39 +176,16 @@ function MainVisual(props: any) {
     });
   };
 
-  useEffect(() => {
-    // データフェッチをシミュレートするために setTimeout を使用
-    const fetchData = async () => {
-      try {
-        // ここに実際のデータフェッチコードを記述
-        const response = await fetch("/api/data"); // API エンドポイントを指定
-        const result = await response.json();
-        setData(result);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      } finally {
-        setLoading(false); // データフェッチが完了したらローディングを終了
-        // setTimeout(() => {
-        //   setLoading(false);
-        // }, 2000); 
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  if (loading) {
-    return <Loading />;
-  }
 
   return (
     <Canvas
-      style={{ width: "95%", height: "750px" }}
+      style={{ width: "100%", height: "750px" }}
       onMouseEnter={() => setIsMouseInCanvas(true)}
       onMouseLeave={() => setIsMouseInCanvas(false)}
       onClick={handleClick} // クリックイベントを追加
     >
-      <Suspense fallback={null}>
+      {/* <Suspense fallback={null}>
+      </Suspense> */}
         {/* ライトの設定 */}
         <directionalLight
           color="white"
@@ -251,7 +230,6 @@ function MainVisual(props: any) {
           Portfolio site
           <meshNormalMaterial />
         </Text3D>
-      </Suspense>
     </Canvas>
   );
 }

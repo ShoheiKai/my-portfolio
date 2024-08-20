@@ -54,6 +54,12 @@ function Works() {
     },
   };
 
+   // アイテムが1つの場合、md以上の画面サイズでは中央に配置するクラス
+   const gridColsClass =
+   data.length === 1
+     ? "grid-cols-1 md:grid-cols-1 justify-items-center"
+     : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3";
+
   return (
     <>
       <motion.h1
@@ -104,7 +110,8 @@ function Works() {
         initial="itemInit"
         whileInView="itemVisible"
         variants={textAnimation}
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 auto-rows-max	 gap-6 m-10 "
+        className={`grid auto-rows-max gap-6 m-10 ${gridColsClass}`}
+        // className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 auto-rows-max gap-6 m-10 "
       >
         {data.map(({ id, title, imageSrc, description, href }) => (
           <WorksCard

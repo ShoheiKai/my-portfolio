@@ -10,12 +10,14 @@ const Loading = () => {
           alt="Loading..."
           width={300}
           height={300}
+          // priority={true}
           className="" // グローバルスタイルクラス名を追加
         />
       </div>
-      <p className="text-6xl text-center">Loding...</p>
+      <p className="text-6xl text-center dark:text-slate-100">Loding...</p>
     </div>
   );
 };
 
 export default Loading;
+

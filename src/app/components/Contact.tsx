@@ -178,7 +178,7 @@ function Contact() {
                 <textarea
                   name="comment"
                   id="comment"
-                  className="form-control w-full max-h-28 min-h-28 border-2 rounded-md border-stone-100 bg-white"
+                  className="form-control w-full max-h-28 min-h-28 border-2 rounded-md border-stone-100 bg-white resize-none"
                   required
                   ref={messageRef}
                 ></textarea>

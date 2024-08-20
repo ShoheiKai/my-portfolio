@@ -43,32 +43,32 @@ function MobileMenu() {
 
   return (
     <>
-      <div className="flex justify-end my-2 py-3 cursor-pointer">
+      <div className="relative h-30 top:0 cursor-pointer">
         {!open && (
           <div
             // initial="openInit"
             // whileInView="openVisible"
             // variants={textAnimation}
             onClick={onClickOpen}
-            className="relative right-0 flex flex-col justify-center items-center w-14 cursor-pointer"
+            className="flex flex-col justify-center items-center w-14 cursor-pointer"
           >
             <motion.div
               initial="openInit"
               whileInView="openVisible"
               variants={textAnimation}
-              className="absolute border-4 rounded-lg dark:border-dark-color border-main-color bottom-2 w-12 h-1"
+              className="border-4 rounded-lg dark:border-dark-color border-main-color mb-1 w-12 h-1"
             ></motion.div>
             <motion.div
               initial="openInit"
               whileInView="openVisible"
               variants={textAnimation}
-              className="absolute border-4 rounded-lg dark:border-dark-color border-main-color top-3/5 w-10 h-1"
+              className="border-4 rounded-lg dark:border-dark-color border-main-color mb-1 w-10 h-1"
             ></motion.div>
             <motion.div
               initial="openInit"
               whileInView="openVisible"
               variants={textAnimation}
-              className="absolute border-4 rounded-lg dark:border-dark-color border-main-color top-2 w-8 h-1"
+              className="border-4 rounded-lg dark:border-dark-color border-main-color top-2 w-8 h-1"
             ></motion.div>
           </div>
         )}
@@ -78,17 +78,17 @@ function MobileMenu() {
             whileInView="openVisible"
             variants={textAnimation}
             onClick={onClickClose}
-            className="relative flex flex-col justify-center items-center w-14 cursor-pointer"
+            className="flex flex-col justify-center items-center w-14 cursor-pointer"
           >
-            <div className="absolute border-4 rounded-lg dark:border-dark-color border-main-color w-10 h-1 transform rotate-45"></div>
-            <div className="absolute border-4 rounded-lg dark:border-dark-color border-main-color w-10 h-1 transform -rotate-45"></div>
+            <div className="absolute top-3 right-2% border-4 rounded-lg dark:border-dark-color border-main-color w-10 transform rotate-45"></div>
+            <div className="absolute top-3 right-2% border-4 rounded-lg dark:border-dark-color border-main-color w-10 transform -rotate-45"></div>
           </motion.div>
         )}
       </div>
 
       {/* ナビゲーションメニュー */}
       {open && (
-        <div className=" text-base dark:text-dark-color text-main-color cursor-pointer">
+        <div className="absolute top-14 right-5 z-10 text-base dark:text-dark-color text-main-color cursor-pointer">
           <motion.nav
             // viewport={{ once: true }}
             initial="navInit"

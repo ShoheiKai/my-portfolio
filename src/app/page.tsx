@@ -1,8 +1,7 @@
 "use client"; // これを追加
 
-import Card from "./components/Card";
-import { Suspense, useEffect, useRef, useState } from "react";
-import Loading from "./loading";
+import React, { Suspense, useEffect, useRef, useState } from "react";
+// import Loading from "./components/Loading";
 import dynamic from "next/dynamic";
 import { animateScroll as scroll, Link as LinkScroll } from "react-scroll";
 import ScrollToTopButton from "./components/ScrollToTopButton";
@@ -11,6 +10,7 @@ import Image from "next/image";
 
 export default function Home() {
   // 各コンポーネントの読み込み
+  const Loading = dynamic(() => import("./components/Loading"), { ssr: false });
   const AboutThisSite = dynamic(() => import("./components/AboutThisSite"), {
     ssr: false,
   });
@@ -19,15 +19,16 @@ export default function Home() {
   const Profile = dynamic(() => import("./components/Profile"), { ssr: false });
   const Works = dynamic(() => import("./components/Works"), { ssr: false });
   const Contact = dynamic(() => import("./components/Contact"), { ssr: false });
-  const MainVisual = dynamic(() => import("./components/MainVisual"), {
-    ssr: false,
-  });
   const MobileMenu = dynamic(() => import("./components/MobileMenu"), {
     ssr: false,
   });
+  const MainVisual = dynamic(() => import("./components/MainVisual"), {
+    ssr: false,
+    loading: () => <Loading />,
+  });
   const MainVisualMobile = dynamic(
     () => import("./components/MainVisualMobile"),
-    { ssr: false }
+    { ssr: false, loading: () => <Loading /> }
   );
 
   const scrollToTop = () => {
@@ -40,7 +41,7 @@ export default function Home() {
       {/* ヘッダー */}
       <header
         id="Header"
-        className="font-shipmincho font-extrabold text-xl dark:text-dark-color text-main-color animate-rotate-x animate-once"
+        className="relative z-30 font-shipmincho font-extrabold text-xl dark:text-dark-color text-main-color animate-rotate-x animate-once"
       >
         <div className="container mx-auto p-4 flex justify-between">
           <div className="">
@@ -95,33 +96,33 @@ export default function Home() {
             </LinkScroll>
           </nav>
           {/* モバイル版ハンバーガーメニュー */}
-          <div className="block md:hidden">
-            <div className="">
-              <MobileMenu />
-            </div>
+          <div className=" w-30 block md:hidden">
+            <MobileMenu />
           </div>
+          {/* <div className="">
+          </div> */}
         </div>
       </header>
 
       {/* メインコンテンツ */}
       <main className="container mx-auto text-main-color ">
-        <div className="hidden md:block">
-          <ScrollToTopButton showAfter={200} hideBefore={6600} />
+        <div className="relative z-50 hidden md:block">
+          <ScrollToTopButton showAfter={200} hideBefore={6300} />
         </div>
         {/* メインビジュアル */}
-        <Suspense fallback={<Loading />}>
-          <section id="1" className="">
-            <div className=" hover:cursor-pointer hidden md:block">
-              <MainVisual />
-            </div>
-            <div className="flex flex-col justify-center items-center hover:cursor-pointer md:hidden">
-              <MainVisualMobile />
-            </div>
-          </section>
-        </Suspense>
+        <section id="1" className="relative z-10 min-h-[600px] md:min-h-[750px]">
+          {/* <Suspense fallback={<Loading />}>
+          </Suspense> */}
+          <div className="hover:cursor-pointer hidden md:block">
+            <MainVisual />
+          </div>
+          <div className=" flex flex-col justify-center items-center hover:cursor-pointer md:hidden">
+            <MainVisualMobile />
+          </div>
+        </section>
 
         {/* About this site */}
-        <section id="About" className="">
+        <section id="About" className="relative md:pt-10">
           <div className="relative">
             <div className="absolute top-2 left-2 hidden md:block">
               <Image
@@ -141,7 +142,7 @@ export default function Home() {
                 className="opacity-65"
               />
             </div>
-            <div className="absolute top-[750px] left-2 hidden md:block">
+            <div className="absolute top-[660px] left-2 hidden md:block">
               <Image
                 src="/img/dark.png"
                 alt="だるまPIN"
@@ -150,7 +151,7 @@ export default function Home() {
                 className="opacity-65"
               />
             </div>
-            <div className="absolute top-[750px] right-2 hidden md:block">
+            <div className="absolute top-[660px] right-2 hidden md:block">
               <Image
                 src="/img/dark.png"
                 alt="だるまPIN"
@@ -160,7 +161,7 @@ export default function Home() {
               />
             </div>
           </div>
-          <div className="bg-slate-200 dark:bg-slate-50 flex flex-col md:justify-normal items-center min-h-svh md:shadow-slate-500 md:shadow-md dark:shadow-orange-200">
+          <div className="bg-slate-200 dark:bg-slate-50 flex flex-col md:justify-normal items-center min-h-svh md:max-h-[700px] md:min-h-[700px] md:shadow-slate-500 md:shadow-md dark:shadow-orange-200">
             <AboutThisSite />
           </div>
         </section>
@@ -168,7 +169,6 @@ export default function Home() {
         {/* About Me */}
         <section id="AboutMe" className="">
           <div className="flex flex-col justify-center md:justify-normal items-center mb-5 md:mb-0 mt-10 md:mt-5 min-h-svh">
-            <div></div>
             <AboutMe />
           </div>
         </section>
@@ -226,7 +226,7 @@ export default function Home() {
         </section>
 
         {/* Works */}
-        <section id="Works" className="">
+        <section id="Works" className="md:pt-5">
           <div className="relative">
             <div className="absolute top-2 left-2 hidden md:block">
               <Image
@@ -246,7 +246,7 @@ export default function Home() {
                 className="opacity-65"
               />
             </div>
-            <div className="absolute top-[750px] left-2 hidden md:block">
+            <div className="absolute top-[660px] left-2 hidden md:block">
               <Image
                 src="/img/dark.png"
                 alt="だるまPIN"
@@ -255,7 +255,7 @@ export default function Home() {
                 className="opacity-65"
               />
             </div>
-            <div className="absolute top-[750px] right-2 hidden md:block">
+            <div className="absolute top-[660px] right-2 hidden md:block">
               <Image
                 src="/img/dark.png"
                 alt="だるまPIN"
@@ -265,7 +265,7 @@ export default function Home() {
               />
             </div>
           </div>
-          <div className="bg-slate-200 dark:bg-slate-50 flex flex-col justify-center items-center min-h-svh md:shadow-slate-500 md:shadow-md dark:shadow-orange-200">
+          <div className="bg-slate-200 dark:bg-slate-50 flex flex-col justify-center items-center min-h-svh md:max-h-[700px] md:min-h-[700px] md:shadow-slate-500 md:shadow-md dark:shadow-orange-200">
             <Works />
           </div>
         </section>
@@ -280,9 +280,9 @@ export default function Home() {
 
       {/* フッター */}
       <footer className="font-shipmincho font-extrabold text-xl text-main-color ">
-        <div className="container mx-auto min-h-44 max-h-44 md:min-h-96 md:max-h-96 flex flex-col items-center ">
-          <div className="bg-yellow-100 min-h-32 md:min-h-80 w-full flex flex-col justify-center items-center">
-            <div className="relative bg-yellow-100 rounded-full w-12 h-12 md:w-24 md:h-24 translate-y-[-40px] md:translate-y-[-120px] flex items-center justify-center transform duration-500 hover:duration-500 hover:scale-125">
+        <div className="container mx-auto min-h-44 max-h-44 md:min-h-80 md:max-h-80 flex flex-col items-center ">
+          <div className="bg-yellow-100 min-h-32 md:min-h-64 w-full flex flex-col justify-center items-center">
+            <div className="relative bg-yellow-100 rounded-full w-12 h-12 md:w-24 md:h-24 translate-y-[-40px] md:translate-y-[-95px] flex items-center justify-center transform duration-500 hover:duration-500 hover:scale-125">
               <button
                 onClick={scrollToTop}
                 className="relative translate-y-[-30px] md:translate-y-[-45px] after:border-x-[15px] md:after:border-x-[30px] after:border-b-[20px] md:after:border-b-[40px] after:border-transparent after:border-b-dark-light "

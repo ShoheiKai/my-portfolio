@@ -1,15 +1,17 @@
-// "use client"; // これを追加
+"use client"; // これを追加
 
 import { useEffect, useRef, useState } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { useGLTF, Text3D } from "@react-three/drei";
 import { Suspense } from "react";
 import { Vector3, Euler } from "three";
-import Loading from "@/app/loading";
+// import dynamic from "next/dynamic";
 import { GLTFLoader } from "three/examples/jsm/Addons.js";
+import Loading from "./Loading";
 
 function MainVisualMobile(props: any) {
   // const { scene } = useGLTF("/main_Daruma3.gltf");
+  // const Loading = dynamic(() => import("./Loading"), { ssr: false });
   const { scene }= useLoader(GLTFLoader, "/main_Daruma3.gltf");
   const [data, setData] = useState<any>(null); // データの型を適切に指定する
 
@@ -41,7 +43,7 @@ function MainVisualMobile(props: any) {
     new Vector3(0,20, -2)
   );
   const [text3Position, setText3Position] = useState<Vector3>(
-    new Vector3(-3.5, -8, -2)
+    new Vector3(-3, -8, -2)
   );
 
   const bounceDuration = 500; // 「はねる」アニメーションの期間（ミリ秒）
@@ -176,39 +178,17 @@ function MainVisualMobile(props: any) {
     });
   };
 
-  useEffect(() => {
-    // データフェッチをシミュレートするために setTimeout を使用
-    const fetchData = async () => {
-      try {
-        // ここに実際のデータフェッチコードを記述
-        const response = await fetch("/api/data"); // API エンドポイントを指定
-        const result = await response.json();
-        setData(result);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      } finally {
-        setLoading(false); // データフェッチが完了したらローディングを終了
-        // setTimeout(() => {
-        //   setLoading(false);
-        // }, 2000); 
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  if (loading) {
-    return <Loading />;
-  }
-
   return (
     <Canvas
       style={{ width: "95%", height: "600px" }}
       onMouseEnter={() => setIsMouseInCanvas(true)}
       onMouseLeave={() => setIsMouseInCanvas(false)}
       onClick={handleClick} // クリックイベントを追加
+      z-index={-1}
+      // z-index:true
     >
-      <Suspense fallback={null}>
+      {/* <Suspense fallback={<Loading />}>
+      </Suspense> */}
         {/* ライトの設定 */}
         <directionalLight
           color="white"
@@ -248,12 +228,12 @@ function MainVisualMobile(props: any) {
           rotation={[0.1, -0.3, 0.1]} // 右側が前に出るように傾ける
           font="/Shippori_Mincho_B1_ExtraBold_Regular.json" // フォントファイルへのパス
           height={0.2} // 厚みを追加
-          size={0.7} // 文字のサイズ
+          size={0.6} // 文字のサイズ
         >
           Portfolio site
           <meshNormalMaterial />
         </Text3D>
-      </Suspense>
+
     </Canvas>
   );
 }

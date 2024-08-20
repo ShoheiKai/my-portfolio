@@ -180,8 +180,8 @@ function AboutThisSite() {
             ゆっくり見ていってください。
           </motion.p>
         </div>
-        <div className="absolute top-[1000px] right-[40px] w-60 h-80 md:absolute md:top-[1200px] md:right-56 scale-75 md:scale-100">
-          <div className="absolute w-16 h-16 top-10 right-5 ">
+        <div className="relative top-0 right-0 w-100 h-80 md:w-400 md:h-400 md:relative md:top-0 md:left-0 md:right-56 scale-75 md:scale-100">
+          <div className="absolute w-16 h-16 top-0 right-2 md:top-10 md:-right-40">
             <Image
               src="/img/pot.png"
               alt="ティーポット"
@@ -190,7 +190,7 @@ function AboutThisSite() {
               className="-rotate-[20deg]"
             />
           </div>
-          <div className="absolute bottom-1/3 left-1/2">
+          <div className="absolute top-10 right-16 md:top-20 md:-right-24 md:left-auto">
             <motion.div
               animate={{ opacity: 1 }}
               initial={{ opacity: 0 }}
@@ -224,7 +224,7 @@ function AboutThisSite() {
               ・
             </motion.div>
           </div>
-          <div className="absolute bottom-4 left-1/3 w-20 h-20">
+          <div className="absolute bottom-20 right-12 w-20 h-20 md:bottom-4 md:-right-28 md:left-auto">
             <Image
               src="/img/teeCup.png"
               alt="ティーカップ"

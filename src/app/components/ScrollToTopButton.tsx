@@ -38,7 +38,7 @@ const ScrollToTopButton = ({ showAfter, hideBefore = 0 }: Props) => {
     <div className="animate-fade animate-once">
       <button
         onClick={handleClick}
-        className="fixed rotate-90 font-shipmincho font-extrabold right-2 bottom-10 md:right-11 md:bottom-10 transition duration-500  py-3 px-7 border-[1px] dark:text-yellow-600 dark:border-yellow-600 border-main-color text-main-color cursor-pointer hover:scale-105 hover:duration-500"
+        className="fixed rotate-90 font-shipmincho font-extrabold right-2 bottom-10 md:right-11 md:bottom-12 transition duration-500  py-3 px-7 border-[1px] dark:text-yellow-600 dark:border-yellow-600 border-main-color text-main-color cursor-pointer hover:scale-105 hover:duration-500"
       >
         Page Top
         <span>
