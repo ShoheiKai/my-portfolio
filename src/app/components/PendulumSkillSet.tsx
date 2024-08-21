@@ -52,7 +52,7 @@ function PendulumSkillSet() {
             <motion.div
               className="w-24 h-16 md:w-44 md:h-32 bg-slate-100 border-2 border-gray-400 rounded-md flex items-center justify-center text-gray-900 text-xs md:text-base shadow-lg"
               style={{ transformOrigin: "top center" }}
-              // viewport={{ once: true }}
+              viewport={{ once: true }}
               initial="skillInit"
               whileInView="skillVisible"
               variants={textAnimation}
