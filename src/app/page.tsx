@@ -1,7 +1,7 @@
 "use client"; // これを追加
 
 import React, { Suspense, useEffect, useRef, useState } from "react";
-// import Loading from "./components/Loading";
+import Loading from "./components/Loading";
 import dynamic from "next/dynamic";
 import { animateScroll as scroll, Link as LinkScroll } from "react-scroll";
 import ScrollToTopButton from "./components/ScrollToTopButton";
@@ -10,7 +10,7 @@ import Image from "next/image";
 
 export default function Home() {
   // 各コンポーネントの読み込み
-  const Loading = dynamic(() => import("./components/Loading"), { ssr: false });
+  // const Loading = dynamic(() => import("./components/Loading"), { ssr: false });
   const AboutThisSite = dynamic(() => import("./components/AboutThisSite"), {
     ssr: false,
   });
@@ -84,6 +84,15 @@ export default function Home() {
               className="mr-10 transform hover:text-2xl duration-200 hover:border-b-4 hover:border-dark-light"
             >
               Portfolio
+            </LinkScroll>
+            <LinkScroll
+              to="Works"
+              smooth={true}
+              duration={1000}
+              offset={0}
+              className="mr-10 transform hover:text-2xl duration-200 hover:border-b-4 hover:border-dark-light"
+            >
+              Works
             </LinkScroll>
             <LinkScroll
               to="Contact"
@@ -174,7 +183,7 @@ export default function Home() {
         </section>
 
         {/* My Skill */}
-        <section id="MySkill" className="">
+        <section id="MySkill" className="md:pt-10">
           <div className="relative">
             <div className="absolute top-2 left-2 hidden md:block">
               <Image
@@ -194,7 +203,7 @@ export default function Home() {
                 className="opacity-65"
               />
             </div>
-            <div className="absolute top-[750px] left-2 hidden md:block">
+            <div className="absolute top-[660px] left-2 hidden md:block">
               <Image
                 src="/img/dark.png"
                 alt="だるまPIN"
@@ -203,7 +212,7 @@ export default function Home() {
                 className="opacity-65"
               />
             </div>
-            <div className="absolute top-[750px] right-2 hidden md:block">
+            <div className="absolute top-[660px] right-2 hidden md:block">
               <Image
                 src="/img/dark.png"
                 alt="だるまPIN"
@@ -213,7 +222,7 @@ export default function Home() {
               />
             </div>
           </div>
-          <div className="bg-slate-200 dark:bg-slate-50 flex flex-col justify-center md:justify-normal items-center min-h-svh md:shadow-slate-500 md:shadow-md dark:shadow-orange-200">
+          <div className="bg-slate-200 dark:bg-slate-50 flex flex-col justify-center md:justify-normal items-center min-h-svh md:max-h-[700px] md:min-h-[700px] md:shadow-slate-500 md:shadow-md dark:shadow-orange-200">
             <MySkill />
           </div>
         </section>
@@ -226,7 +235,7 @@ export default function Home() {
         </section>
 
         {/* Works */}
-        <section id="Works" className="md:pt-5">
+        <section id="Works" className="md:pt-10">
           <div className="relative">
             <div className="absolute top-2 left-2 hidden md:block">
               <Image

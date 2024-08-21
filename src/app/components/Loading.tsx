@@ -10,7 +10,6 @@ const Loading = () => {
           alt="Loading..."
           width={300}
           height={300}
-          // priority={true}
           className="" // グローバルスタイルクラス名を追加
         />
       </div>

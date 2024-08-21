@@ -79,13 +79,13 @@ function Contact() {
 
   return (
     <>
-      <div className="mb-10 py-12 ">
+      <div className="mt-5 mb-10 md:mt-12 md:mb-24">
         <motion.h1
           viewport={{ once: true }}
           initial="hInit"
           whileInView="hVisible"
           variants={textAnimation}
-          className="mb-4 md:mb-10 font-shipmincho font-extrabold dark:text-dark-color text-3xl md:text-4xl text-center"
+          className="mb-5 md:mb-10 font-shipmincho font-extrabold dark:text-dark-color text-3xl md:text-4xl text-center"
         >
           Contact
         </motion.h1>
@@ -113,7 +113,7 @@ function Contact() {
           initial="pInit"
           whileInView="pVisible"
           variants={textAnimation}
-          className="px-3 font-notojp text-sm leading-relaxed text-center tracking-wider md:tracking-widest dark:text-dark-color block md:hidden "
+          className="px-3 font-notojp text-xs leading-relaxed text-center tracking-wider md:tracking-widest dark:text-dark-color block md:hidden "
         >
           最後まで読んでいただき、
           <br />
@@ -186,7 +186,7 @@ function Contact() {
             </div>
             <button
               type="submit"
-              className="w-56 h-16 text-lg bg-custom-dark-light border-dark-light shadow-lg text-main-color font-bold py-2 px-4 border rounded transform duration-500 hover:duration-500 hover:scale-110 active:shadow-sm active:duration-100"
+              className="w-48 h-10 text-sm md:w-56 md:h-16 md:text-lg bg-custom-dark-light border-dark-light shadow-md md:shadow-lg dark:shadow-slate-600 text-main-color font-bold py-2 px-4 border rounded transform duration-500 hover:duration-500 hover:scale-110 active:shadow-sm active:duration-100"
             >
               メッセージを送信する
             </button>

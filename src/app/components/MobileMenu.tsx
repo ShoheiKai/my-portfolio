@@ -133,6 +133,15 @@ function MobileMenu() {
               Portfolio
             </LinkScroll>
             <LinkScroll
+              to="Works"
+              smooth={true}
+              duration={1000}
+              offset={0}
+              className="transform hover:text-xl duration-200 hover:border-b-4 hover:border-dark-light"
+            >
+              Works
+            </LinkScroll>
+            <LinkScroll
               to="Contact"
               smooth={true}
               duration={1000}
